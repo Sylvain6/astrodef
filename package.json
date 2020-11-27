@@ -1,0 +1,12 @@
+{
+  "name": "astrodef",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Sylvain6/astrodef.git",
+  "author": "Sylvain6",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
