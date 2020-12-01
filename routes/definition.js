@@ -10,6 +10,20 @@ router.get("/", (req, res) => {
     Definition.find(req.query).then(data => res.json(data));
 });
 
+// definitions/subject/:id
+router.get("/subject/:subject", (req, res) => {
+    Definition.find({ subject: req.params.subject })
+        .then(data => res.json(data))
+        .catch(error => {
+            console.log(error);
+            if (error.name === "CastError") {
+                res.status(422).json({ message: "Invalid id" });
+            } else {
+                res.sendStatus(500);
+            }
+        });
+});
+
 // definitions/:id
 router.get("/:id", (req, res) => {
     Definition.findOne({ _id: req.params.id })
