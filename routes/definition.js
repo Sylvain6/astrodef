@@ -65,7 +65,7 @@ router.post("/", async (req, res) => {
 });
 
 // /definitions/:id
-router.delete("/", (req, res) => {
+router.delete("/:id", (req, res) => {
     Definition.findOneAndDelete({ _id: req.params.id })
         .then(data => res.json(data))
         .catch(error => {

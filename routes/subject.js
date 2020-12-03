@@ -45,7 +45,7 @@ router.post("/", (req, res) => {
 });
 
 // /subjects/:id
-router.delete("/", (req, res) => {
+router.delete("/:id", (req, res) => {
     Subject.findOneAndDelete({ _id: req.params.id })
         .then(data => res.json(data))
         .catch(error => {
